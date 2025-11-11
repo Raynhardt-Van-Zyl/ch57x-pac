@@ -1,0 +1,133 @@
+#[doc = "Register `R8_UART0_IER` reader"]
+pub type R = crate::R<R8Uart0IerSpec>;
+#[doc = "Register `R8_UART0_IER` writer"]
+pub type W = crate::W<R8Uart0IerSpec>;
+#[doc = "Field `RB_IER_RECV_RDY` reader - RW, UART interrupt enable for receiver data ready"]
+pub type RbIerRecvRdyR = crate::BitReader;
+#[doc = "Field `RB_IER_RECV_RDY` writer - RW, UART interrupt enable for receiver data ready"]
+pub type RbIerRecvRdyW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_THR_EMPTY` reader - RW, UART interrupt enable for THR empty"]
+pub type RbIerThrEmptyR = crate::BitReader;
+#[doc = "Field `RB_IER_THR_EMPTY` writer - RW, UART interrupt enable for THR empty"]
+pub type RbIerThrEmptyW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_LINE_STAT` reader - RW, UART interrupt enable for receiver line status"]
+pub type RbIerLineStatR = crate::BitReader;
+#[doc = "Field `RB_IER_LINE_STAT` writer - RW, UART interrupt enable for receiver line status"]
+pub type RbIerLineStatW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_MODEM_CHG` reader - RW, UART0 interrupt enable for modem status change"]
+pub type RbIerModemChgR = crate::BitReader;
+#[doc = "Field `RB_IER_MODEM_CHG` writer - RW, UART0 interrupt enable for modem status change"]
+pub type RbIerModemChgW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_DTR_EN` reader - RW, UART0 DTR/TNOW output pin enable"]
+pub type RbIerDtrEnR = crate::BitReader;
+#[doc = "Field `RB_IER_DTR_EN` writer - RW, UART0 DTR/TNOW output pin enable"]
+pub type RbIerDtrEnW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_RTS_EN` reader - RW, UART0 RTS output pin enable"]
+pub type RbIerRtsEnR = crate::BitReader;
+#[doc = "Field `RB_IER_RTS_EN` writer - RW, UART0 RTS output pin enable"]
+pub type RbIerRtsEnW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_TXD_EN` reader - RW, UART TXD pin enable"]
+pub type RbIerTxdEnR = crate::BitReader;
+#[doc = "Field `RB_IER_TXD_EN` writer - RW, UART TXD pin enable"]
+pub type RbIerTxdEnW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_IER_RESET` reader - WZ, UART software reset control, high action, auto clear"]
+pub type RbIerResetR = crate::BitReader;
+#[doc = "Field `RB_IER_RESET` writer - WZ, UART software reset control, high action, auto clear"]
+pub type RbIerResetW<'a, REG> = crate::BitWriter<'a, REG>;
+impl R {
+    #[doc = "Bit 0 - RW, UART interrupt enable for receiver data ready"]
+    #[inline(always)]
+    pub fn rb_ier_recv_rdy(&self) -> RbIerRecvRdyR {
+        RbIerRecvRdyR::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - RW, UART interrupt enable for THR empty"]
+    #[inline(always)]
+    pub fn rb_ier_thr_empty(&self) -> RbIerThrEmptyR {
+        RbIerThrEmptyR::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - RW, UART interrupt enable for receiver line status"]
+    #[inline(always)]
+    pub fn rb_ier_line_stat(&self) -> RbIerLineStatR {
+        RbIerLineStatR::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - RW, UART0 interrupt enable for modem status change"]
+    #[inline(always)]
+    pub fn rb_ier_modem_chg(&self) -> RbIerModemChgR {
+        RbIerModemChgR::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - RW, UART0 DTR/TNOW output pin enable"]
+    #[inline(always)]
+    pub fn rb_ier_dtr_en(&self) -> RbIerDtrEnR {
+        RbIerDtrEnR::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - RW, UART0 RTS output pin enable"]
+    #[inline(always)]
+    pub fn rb_ier_rts_en(&self) -> RbIerRtsEnR {
+        RbIerRtsEnR::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - RW, UART TXD pin enable"]
+    #[inline(always)]
+    pub fn rb_ier_txd_en(&self) -> RbIerTxdEnR {
+        RbIerTxdEnR::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - WZ, UART software reset control, high action, auto clear"]
+    #[inline(always)]
+    pub fn rb_ier_reset(&self) -> RbIerResetR {
+        RbIerResetR::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - RW, UART interrupt enable for receiver data ready"]
+    #[inline(always)]
+    pub fn rb_ier_recv_rdy(&mut self) -> RbIerRecvRdyW<'_, R8Uart0IerSpec> {
+        RbIerRecvRdyW::new(self, 0)
+    }
+    #[doc = "Bit 1 - RW, UART interrupt enable for THR empty"]
+    #[inline(always)]
+    pub fn rb_ier_thr_empty(&mut self) -> RbIerThrEmptyW<'_, R8Uart0IerSpec> {
+        RbIerThrEmptyW::new(self, 1)
+    }
+    #[doc = "Bit 2 - RW, UART interrupt enable for receiver line status"]
+    #[inline(always)]
+    pub fn rb_ier_line_stat(&mut self) -> RbIerLineStatW<'_, R8Uart0IerSpec> {
+        RbIerLineStatW::new(self, 2)
+    }
+    #[doc = "Bit 3 - RW, UART0 interrupt enable for modem status change"]
+    #[inline(always)]
+    pub fn rb_ier_modem_chg(&mut self) -> RbIerModemChgW<'_, R8Uart0IerSpec> {
+        RbIerModemChgW::new(self, 3)
+    }
+    #[doc = "Bit 4 - RW, UART0 DTR/TNOW output pin enable"]
+    #[inline(always)]
+    pub fn rb_ier_dtr_en(&mut self) -> RbIerDtrEnW<'_, R8Uart0IerSpec> {
+        RbIerDtrEnW::new(self, 4)
+    }
+    #[doc = "Bit 5 - RW, UART0 RTS output pin enable"]
+    #[inline(always)]
+    pub fn rb_ier_rts_en(&mut self) -> RbIerRtsEnW<'_, R8Uart0IerSpec> {
+        RbIerRtsEnW::new(self, 5)
+    }
+    #[doc = "Bit 6 - RW, UART TXD pin enable"]
+    #[inline(always)]
+    pub fn rb_ier_txd_en(&mut self) -> RbIerTxdEnW<'_, R8Uart0IerSpec> {
+        RbIerTxdEnW::new(self, 6)
+    }
+    #[doc = "Bit 7 - WZ, UART software reset control, high action, auto clear"]
+    #[inline(always)]
+    pub fn rb_ier_reset(&mut self) -> RbIerResetW<'_, R8Uart0IerSpec> {
+        RbIerResetW::new(self, 7)
+    }
+}
+#[doc = "RW, UART0 interrupt enable\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_uart0_ier::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_uart0_ier::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R8Uart0IerSpec;
+impl crate::RegisterSpec for R8Uart0IerSpec {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [`r8_uart0_ier::R`](R) reader structure"]
+impl crate::Readable for R8Uart0IerSpec {}
+#[doc = "`write(|w| ..)` method takes [`r8_uart0_ier::W`](W) writer structure"]
+impl crate::Writable for R8Uart0IerSpec {
+    type Safety = crate::Unsafe;
+}
+#[doc = "`reset()` method sets R8_UART0_IER to value 0"]
+impl crate::Resettable for R8Uart0IerSpec {}

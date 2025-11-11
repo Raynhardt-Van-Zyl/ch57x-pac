@@ -1,0 +1,18 @@
+[package]
+name = "ch57x-pac"
+version = "0.1.0"
+edition = "2021"
+authors = ["Raynhardt van Zyl <raynhardt.vanzyl@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "Peripheral Access Crate for the WCH CH57x series microcontrollers"
+repository = "https://github.com/Raynhardt-Van-Zyl/ch57x-pac"
+
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+vcell = "0.1.3"
+
+[features]
+default = ["rt"]
+rt = []

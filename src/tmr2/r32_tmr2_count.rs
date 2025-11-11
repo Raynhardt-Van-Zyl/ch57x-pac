@@ -1,0 +1,20 @@
+#[doc = "Register `R32_TMR2_COUNT` reader"]
+pub type R = crate::R<R32Tmr2CountSpec>;
+#[doc = "Field `R32_TMR2_COUNT` reader - RW, TMR2 current count"]
+pub type R32Tmr2CountR = crate::FieldReader<u32>;
+impl R {
+    #[doc = "Bits 0:31 - RW, TMR2 current count"]
+    #[inline(always)]
+    pub fn r32_tmr2_count(&self) -> R32Tmr2CountR {
+        R32Tmr2CountR::new(self.bits)
+    }
+}
+#[doc = "RO, TMR2 current count\n\nYou can [`read`](crate::Reg::read) this register and get [`r32_tmr2_count::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R32Tmr2CountSpec;
+impl crate::RegisterSpec for R32Tmr2CountSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`r32_tmr2_count::R`](R) reader structure"]
+impl crate::Readable for R32Tmr2CountSpec {}
+#[doc = "`reset()` method sets R32_TMR2_COUNT to value 0"]
+impl crate::Resettable for R32Tmr2CountSpec {}

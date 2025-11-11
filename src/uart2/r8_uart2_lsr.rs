@@ -1,0 +1,71 @@
+#[doc = "Register `R8_UART2_LSR` reader"]
+pub type R = crate::R<R8Uart2LsrSpec>;
+#[doc = "Field `RB_LSR_DATA_RDY` reader - RO, UART receiver fifo data ready status"]
+pub type RbLsrDataRdyR = crate::BitReader;
+#[doc = "Field `RB_LSR_OVER_ERR` reader - RZ, UART receiver overrun error"]
+pub type RbLsrOverErrR = crate::BitReader;
+#[doc = "Field `RB_LSR_PAR_ERR` reader - RZ, UART receiver parity error"]
+pub type RbLsrParErrR = crate::BitReader;
+#[doc = "Field `RB_LSR_FRAME_ERR` reader - RZ, UART receiver frame error"]
+pub type RbLsrFrameErrR = crate::BitReader;
+#[doc = "Field `RB_LSR_BREAK_ERR` reader - RZ, UART receiver break error"]
+pub type RbLsrBreakErrR = crate::BitReader;
+#[doc = "Field `RB_LSR_TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status"]
+pub type RbLsrTxFifoEmpR = crate::BitReader;
+#[doc = "Field `RB_LSR_TX_ALL_EMP` reader - RO, UART transmitter all empty status"]
+pub type RbLsrTxAllEmpR = crate::BitReader;
+#[doc = "Field `RB_LSR_ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo"]
+pub type RbLsrErrRxFifoR = crate::BitReader;
+impl R {
+    #[doc = "Bit 0 - RO, UART receiver fifo data ready status"]
+    #[inline(always)]
+    pub fn rb_lsr_data_rdy(&self) -> RbLsrDataRdyR {
+        RbLsrDataRdyR::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - RZ, UART receiver overrun error"]
+    #[inline(always)]
+    pub fn rb_lsr_over_err(&self) -> RbLsrOverErrR {
+        RbLsrOverErrR::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - RZ, UART receiver parity error"]
+    #[inline(always)]
+    pub fn rb_lsr_par_err(&self) -> RbLsrParErrR {
+        RbLsrParErrR::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - RZ, UART receiver frame error"]
+    #[inline(always)]
+    pub fn rb_lsr_frame_err(&self) -> RbLsrFrameErrR {
+        RbLsrFrameErrR::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - RZ, UART receiver break error"]
+    #[inline(always)]
+    pub fn rb_lsr_break_err(&self) -> RbLsrBreakErrR {
+        RbLsrBreakErrR::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - RO, UART transmitter fifo empty status"]
+    #[inline(always)]
+    pub fn rb_lsr_tx_fifo_emp(&self) -> RbLsrTxFifoEmpR {
+        RbLsrTxFifoEmpR::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - RO, UART transmitter all empty status"]
+    #[inline(always)]
+    pub fn rb_lsr_tx_all_emp(&self) -> RbLsrTxAllEmpR {
+        RbLsrTxAllEmpR::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - RO, indicate error in UART receiver fifo"]
+    #[inline(always)]
+    pub fn rb_lsr_err_rx_fifo(&self) -> RbLsrErrRxFifoR {
+        RbLsrErrRxFifoR::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+#[doc = "RO, UART2 line status\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_uart2_lsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R8Uart2LsrSpec;
+impl crate::RegisterSpec for R8Uart2LsrSpec {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [`r8_uart2_lsr::R`](R) reader structure"]
+impl crate::Readable for R8Uart2LsrSpec {}
+#[doc = "`reset()` method sets R8_UART2_LSR to value 0x60"]
+impl crate::Resettable for R8Uart2LsrSpec {
+    const RESET_VALUE: u8 = 0x60;
+}
