@@ -10,7 +10,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-ch57x-pac = { git = "https://github.com/Raynhardt-Van-Zyl/ch57x-pac" }
+ch57x-pac = "0.1.1"
 ```
 
 Or for local development:
@@ -23,7 +23,8 @@ ch57x-pac = { path = "../ch57x-pac" }
 Then, in your code:
 
 ```rust
-use ch57x_pac::UART0;
+let p = ch57x_pac::Peripherals::take().unwrap();
+let _uart0 = p.uart0;
 ```
 
 ## Building
@@ -31,7 +32,7 @@ use ch57x_pac::UART0;
 To build the crate:
 
 ```bash
-cargo build --target riscv32i-unknown-none-elf
+cargo build --target riscv32imac-unknown-none-elf
 ```
 
 ## License
