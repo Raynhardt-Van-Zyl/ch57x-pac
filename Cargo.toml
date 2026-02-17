@@ -1,6 +1,6 @@
 [package]
 name = "ch57x-pac"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["Raynhardt van Zyl <raynhardt.vanzyl@gmail.com>"]
 license = "MIT OR Apache-2.0"
