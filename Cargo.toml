@@ -1,12 +1,16 @@
 [package]
 name = "ch57x-pac"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Raynhardt van Zyl <raynhardt.vanzyl@gmail.com>"]
 license = "MIT OR Apache-2.0"
-description = "Peripheral Access Crate for the WCH CH57x series microcontrollers"
+description = "Peripheral Access Crate (PAC) for WCH CH57x RISC-V BLE microcontrollers"
 repository = "https://github.com/Raynhardt-Van-Zyl/ch57x-pac"
 documentation = "https://docs.rs/ch57x-pac"
+homepage = "https://github.com/Raynhardt-Van-Zyl/ch57x-pac"
+readme = "README.md"
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["ch57x", "wch", "pac", "embedded", "riscv"]
 
 [lib]
 crate-type = ["rlib"]
@@ -19,3 +23,8 @@ critical-section = { version = "1", optional = true }
 default = ["rt"]
 rt = []
 critical-section = ["dep:critical-section"]
+
+[package.metadata.docs.rs]
+default-target = "riscv32imac-unknown-none-elf"
+features = ["rt", "critical-section"]
+rustdoc-args = ["--cfg", "docsrs"]

@@ -1,40 +1,44 @@
 # ch57x-pac
 
-Peripheral Access Crate for the WCH CH57x series microcontrollers.
+Peripheral Access Crate (PAC) for WCH CH57x RISC-V BLE microcontrollers.
 
-This crate provides a safe Rust API for accessing the peripherals of the WCH CH57x RISC-V microcontrollers. It is generated from the SVD file using `svd2rust`.
+This crate is generated using `svd2rust` and provides register-level access to CH57x peripherals.
 
-## Usage
+## Scope
 
-Add this to your `Cargo.toml`:
+- `no_std` PAC for CH57x-family register blocks
+- Interrupt definitions and vector table support via `rt` feature
+- Optional `critical-section` integration for embedded Rust ecosystem crates
 
-```toml
-[dependencies]
-ch57x-pac = "0.1.1"
-```
-
-Or for local development:
+## Cargo
 
 ```toml
 [dependencies]
-ch57x-pac = { path = "../ch57x-pac" }
+ch57x-pac = "0.1.2"
 ```
 
-Then, in your code:
+## Features
+
+- `rt` (default): exports interrupt symbols/vector table glue expected by runtime crates
+- `critical-section`: enables `critical-section` support
+
+## Minimal Usage
 
 ```rust
 let p = ch57x_pac::Peripherals::take().unwrap();
-let _uart0 = p.uart0;
+p.sys.r8_clk_sys_cfg().modify(|_, w| unsafe { w.bits(0) });
 ```
 
-## Building
+## docs.rs Notes
 
-To build the crate:
+docs.rs builds with:
 
-```bash
-cargo build --target riscv32imac-unknown-none-elf
-```
+- target: `riscv32imac-unknown-none-elf`
+- features: `rt`, `critical-section`
 
 ## License
 
-Licensed under MIT OR Apache-2.0.
+Licensed under either:
+
+- Apache License, Version 2.0
+- MIT license
